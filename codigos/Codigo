@@ -1,0 +1,108 @@
+print("Bienvenido a ... ")
+print("""
+
+
+██████╗░░█████╗░████████╗░█████╗░██████╗░██████╗░
+██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗██╔══██╗██╔══██╗
+██████╔╝███████║░░░██║░░░███████║██████╔╝██████╔╝
+██╔══██╗██╔══██║░░░██║░░░██╔══██║██╔═══╝░██╔═══╝░
+██║░░██║██║░░██║░░░██║░░░██║░░██║██║░░░░░██║░░░░░
+╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░░░░╚═╝░░░░░
+ⲙ&ⲙ'𝛓 ⲥⲟⲙⲣⲁⲛⲩ
+""")
+
+# Solicitud de nombre
+nombre = input("Para empezar, dime como te llamas, mi queridx reoedor. \n")
+print()
+print("Hola ", nombre, ", bienvenido a ratapp")
+print()
+
+# Cálculo de edad
+agno = int(input("Para preparar tu perfil, dime en qué año naciste, rata ponzoñosa  (•◡•) /. \n"))
+edad = 2022-agno
+print()
+
+# Cálculo de estatura
+estatura = float(input("Cuéntame más de ti, no podemos aceptar a cualquier roedor. ¿Cuánto mides? Dímelo en metros. \n"))
+estatura_m = int(estatura)
+estatura_cm = int( (estatura - estatura_m)*100 + 1 )
+
+# Cantidad de amigos
+num_amigos = int(input("Muy bien. Finalmente, cuéntame cuantos amigos tienes. \n"))
+
+#Con los datos recolectados escribimos en pantalla un texto que resuma los datos que hemos obtenido
+print()
+print("Muy bien,", nombre, ". Entonces podemos crear un perfil con estos datos.")
+print("--------------------------------------------------")
+print("Nombre:  ", nombre)
+print("Edad:    ", edad, "años")
+print("Estatura:", estatura_m, "metros y", estatura_cm, "centímetros")
+print("Amigos:  ", num_amigos)
+print("--------------------------------------------------")
+print("Gracias por la información. Bienvenido a la colonia de ratapp")
+print()
+
+#Usaremos una variable bool para indicar si el usuario desea continuar
+#utilizando el programa o no
+continuar = True
+
+#Este ciclo se mantiene en ejecución hasta que el usuario desee salir
+while continuar:
+
+    #Solicitamos opción al usuario
+    escribir_mensaje = str(input("¿Deseas escribir un mensaje? (Si/No) "))
+    # Aquí podríamos implementar un menú que ofreciera más opciones
+
+    #Vamos a aceptar que el usuario ingrese un mensaje cuando escriban "S", "s", o nada
+    if escribir_mensaje.lower() == "si" or escribir_mensaje == "":
+        mensaje = input("Vamos a publicar un mensaje. ¿Qué piensas hoy? ")
+        print()
+        print("--------------------------------------------------")
+        print(nombre, "dice:", mensaje)
+        print("--------------------------------------------------")
+    #En caso que sea otra respuesta, vamos a decidir salir.
+    #Así, en la siguiente iteración el ciclo terminará
+    elif escribir_mensaje.lower() == 'no' :
+        continuar = False
+    elif escribir_mensaje.lower() != 'si':
+        escribir_mensaje = str(input("¿Deseas escribir un mensaje? (Si/No) "))
+
+print('------------------------------------------------------------------------------')
+print('Excelente! ya casi puedo ver tus orejas y cola de rata (─‿‿─) \n Este es el meú principal:')
+print('1. Deseo cambiar mi nombre')
+print('2. Deseo cambiar la conficuracion de privacidad')
+print('3. Deseo ver el feed ')
+print('4. Salir')
+print('------------------------------------------------------------------------------')
+menu_principal = int(input('Selecciona la opción que desees hacer:   '))
+
+if menu_principal == 1:
+    print('------------------------------------------------------------------------------')
+    print('Con que quieres cambiar tu nombre eh rata de cloaca ( ͡¬ ͜ʖ ͡¬) \n Bueno, aqui es donde puedes cambiar tu nombre de usuario')
+    nuevo_nombre = input('Dame tu nuevo nombre con el que quieres ingresar: \n')
+    print('Tu nuevo nombre es', nuevo_nombre)
+    seguro = input( '¿Es correcto?(si/no)     ')
+    if seguro.lower() == 'si':
+            nombre = nuevo_nombre
+            print('Ok, ratita ≧◡≦. Tu nuevo nombre es', nombre)
+    while seguro.lower() == 'no' or seguro.lower() != 'si':
+        print('Ok （‐＾▽＾‐） TRATEMOS DE NUEV0!')
+        nuevo_nombre = input('Dame tu nuevo nombre con el que quieres ingresar: \n')
+        print('Tu nuevo nombre es', nuevo_nombre)
+        seguro = input('¿Es correcto?(si/no)     ')
+    print('Muy bien rata, volvamos al menu principal （‐＾▽＾‐）') #copiar ejercicio de menu
+
+if menu_principal == 2:
+    print('Con que no quieres que todos sepan lo rata que eres eh... ( ͡≖ ͜ʖ ͡≖)')
+    privado = input('¿Deseas cambiar la configuracion de privacidad? (Si/No)')
+    if privado.lower() == 'si':
+        print('se ha cambiado la configuracion a privado')
+    if privado.lower() == 'no':
+        print('Ok volvamos al menu principal ( ͡^ ͜ʖ ͡^)')
+    while privado.lower() != 'si':
+        print('Komo? No te entendi (ㆆ_ㆆ)')
+        privado = input('¿Deseas cambiar la configuracion de privacidad? (Si/No)')
+
+
+#Mensaje de salida, una vez que el ciclo ha terminado.
+print("Gracias por usar ratapp. ¡Hasta pronto!")
